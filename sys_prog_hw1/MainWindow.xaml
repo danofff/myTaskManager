@@ -16,12 +16,12 @@
                 </GridView>
             </ListView.View>
             <ListView.Resources>
-                <col:ArrayList x:Key="phones">
+                <ArrayList x:Key="phones">
                     <local:MyProcess />
                     <local:MyProcess />
                     <local:MyProcess />
                     <local:MyProcess />
-                </col:ArrayList>
+                </ArrayList>
             </ListView.Resources>
         </ListView>
      
