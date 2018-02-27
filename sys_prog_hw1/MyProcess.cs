@@ -9,8 +9,9 @@ namespace sys_prog_hw1
 {
     public class MyProcess
     {    
-        public string NameProcess { get; }
-        public int IdProcess { get;}
-        public List<ProcessThread> Threads { get; }
+        public string NameProcess { get; set; }
+        public int IdProcess { get; set; }
+        public List<ProcessThread> Threads { get; set; }
+        public int ThreadsCount { get; set; }
     }
 }

@@ -7,24 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid Name="MainGrid">
-        <ListView Name="phonesList" ItemsSource="{DynamicResource ResourceKey=phones}" >
+        <ListView x:Name="ProcessHandler">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Title}">Модель</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Company}" Width="100">Компания</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Цена</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding IdProcess}" Width="100">
+                        <GridViewColumnHeader Click="IdClick">Id    
+                        </GridViewColumnHeader>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding NameProcess}" Width="300">
+                        <GridViewColumnHeader Click="NameClick">Name
+                        </GridViewColumnHeader>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding ThreadsCount}" Width="80">
+                        <GridViewColumnHeader Click="ThreadsClick">Threads
+                        </GridViewColumnHeader>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
-            <ListView.Resources>
-                <ArrayList x:Key="phones">
-                    <local:MyProcess />
-                    <local:MyProcess />
-                    <local:MyProcess />
-                    <local:MyProcess />
-                </ArrayList>
-            </ListView.Resources>
         </ListView>
-     
-
     </Grid>
 </Window>
