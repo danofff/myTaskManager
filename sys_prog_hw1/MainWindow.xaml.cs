@@ -159,7 +159,6 @@ namespace sys_prog_hw1
                     if (findProcessName.ToLower() == ((MyProcess)ProcessHandler.Items[i]).NameProcess.ToLower())
                     {
                         ProcessHandler.SelectedItem = ProcessHandler.Items[i];
-                        ProcessHandler.SelectedItem = ProcessHandler.Items[i];
                         ProcessHandler.ScrollIntoView(ProcessHandler.Items[i]);
                         ProcessHandler.Focus();
                         break;
