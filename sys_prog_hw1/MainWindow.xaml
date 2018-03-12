@@ -5,25 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:sys_prog_hw1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="610">
     <Grid Name="MainGrid">
-        <ListView x:Name="ProcessHandler">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView x:Name="ProcessHandler" Grid.Row="0" ItemsSource="{Binding Path=Myprocess}">
+            <ListView.Resources>
+                <ContextMenu x:Key="ItemContexMenu">
+                    <MenuItem Header="Kill process" Name="Kill_process" Click="Kill_process_Click"></MenuItem>
+                </ContextMenu>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}" >
+                    <Setter Property="ContextMenu" Value="{StaticResource ItemContexMenu}" />
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding IdProcess}" Width="100">
-                        <GridViewColumnHeader Click="IdClick">Id    
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=IdProcess}" Width="100">
+                        <GridViewColumnHeader Click="IdClick">Id
                         </GridViewColumnHeader>
                     </GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding NameProcess}" Width="300">
+                    <GridViewColumn DisplayMemberBinding="{Binding  Path=NameProcess}" Width="300">
                         <GridViewColumnHeader Click="NameClick">Name
                         </GridViewColumnHeader>
                     </GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding ThreadsCount}" Width="80">
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ThreadsCount}" Width="80">
                         <GridViewColumnHeader Click="ThreadsClick">Threads
+                        </GridViewColumnHeader>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Memory}" Width="80">
+                        <GridViewColumnHeader Click="MemoryClick">Memory kb
                         </GridViewColumnHeader>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
+        <WrapPanel Grid.Row="1">
+            <Label>Find process by name:</Label>
+            <TextBox x:Name="FindTextBox" Width="200"></TextBox>
+            <Button Width="100px" Name="FindButton" Click="FindButton_Click">Find</Button>
+        </WrapPanel>
+        
     </Grid>
 </Window>

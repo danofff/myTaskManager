@@ -13,5 +13,6 @@ namespace sys_prog_hw1
         public int IdProcess { get; set; }
         public List<ProcessThread> Threads { get; set; }
         public int ThreadsCount { get; set; }
+        public long Memory { get; set; }
     }
 }
