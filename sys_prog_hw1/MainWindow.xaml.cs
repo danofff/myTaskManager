@@ -29,7 +29,6 @@ namespace sys_prog_hw1
         {
             InitializeComponent();          
             AllProcess = Process.GetProcesses().ToList();
-            
             AddElements(sortBy.id);            
         }
 
@@ -166,9 +165,7 @@ namespace sys_prog_hw1
                         break;
                     }
                 } 
-            }
-                
-            
+            }                   
         }
         private void Kill_process_Click(object sender, RoutedEventArgs e)
         {

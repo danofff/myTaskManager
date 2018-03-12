@@ -11,7 +11,7 @@
             <RowDefinition Height="9*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView x:Name="ProcessHandler" Grid.Row="0" ItemsSource="{Binding Path=Myprocess}">
+        <ListView x:Name="ProcessHandler" Grid.Row="0" ItemsSource="{Binding Path=MyProcess}">
             <ListView.Resources>
                 <ContextMenu x:Key="ItemContexMenu">
                     <MenuItem Header="Kill process" Name="Kill_process" Click="Kill_process_Click"></MenuItem>
