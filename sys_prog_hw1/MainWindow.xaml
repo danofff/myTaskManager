@@ -43,7 +43,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <WrapPanel Grid.Row="1">
+        <WrapPanel Grid.Row="1" VerticalAlignment="Center">
             <Label>Find process by name:</Label>
             <TextBox x:Name="FindTextBox" Width="200"></TextBox>
             <Button Width="100px" Name="FindButton" Click="FindButton_Click">Find</Button>
