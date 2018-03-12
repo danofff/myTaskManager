@@ -46,7 +46,7 @@
         <WrapPanel Grid.Row="1" VerticalAlignment="Center">
             <Label>Find process by name:</Label>
             <TextBox x:Name="FindTextBox" Width="200"></TextBox>
-            <Button Width="100px" Name="FindButton" Click="FindButton_Click">Find</Button>
+            <Button Width="100px" Name="FindButton" Click="FindButton_Click" Margin="5 0">Find</Button>
         </WrapPanel>
         
     </Grid>
